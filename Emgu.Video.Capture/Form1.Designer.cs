@@ -226,6 +226,7 @@
             // 
             // chkShowBackground
             // 
+            chkShowBackground.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             chkShowBackground.AutoSize = true;
             chkShowBackground.Location = new Point(19, 493);
             chkShowBackground.Name = "chkShowBackground";
