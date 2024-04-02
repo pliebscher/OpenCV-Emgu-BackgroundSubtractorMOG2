@@ -8,8 +8,6 @@ using Emgu.CV.Structure;
 using Emgu.CV.Util;
 using static Emgu.CV.VideoCapture;
 
-using AForge.Video.DirectShow;
-
 namespace Emgu.Video.Capture
 {
     public partial class Form1 : Form
