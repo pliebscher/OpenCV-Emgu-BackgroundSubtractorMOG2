@@ -1,1 +1,2 @@
-# Emgu
+# Emgu.CV - BackgroundSubtractorMOG2
+
