@@ -14,16 +14,9 @@ namespace Emgu.Video.Capture
     {
 
         private VideoCapture capture;
-        //private IBackgroundSubtractor backgroundSubtractor;
-
-        //private BackgroundSubtractorMOG2 backgroundSubtractor;
-
         private BackgroundSubtractorMOG2 backgroundSubtractor;
         private float MOG2LearningRate = .5f;
         private ChainApproxMethod ChnApprxMeth = ChainApproxMethod.ChainApproxNone;
-
-        //private BackgroundSubtractorGMG backgroundSubtractor;
-
 
         private Mat frame, foreground;
         private bool captureInProgress;
