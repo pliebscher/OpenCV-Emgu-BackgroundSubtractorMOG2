@@ -53,6 +53,9 @@ namespace Emgu.Video.Capture
 
         private void StartCapture_Click(object sender, EventArgs e)
         {
+
+            txtDeviceNum.Enabled = false;
+
             if (!captureInProgress)
             {
                 try
@@ -70,6 +73,8 @@ namespace Emgu.Video.Capture
 
         private void StopCapture_Click(object sender, EventArgs e)
         {
+            txtDeviceNum.Enabled = true;
+
             if (captureInProgress)
             {
                 captureInProgress = false;
@@ -107,15 +112,28 @@ namespace Emgu.Video.Capture
                     }
                 }
 
-                Mat result = new Mat();
-                frame.CopyTo(result);
-
-                foreach (Rectangle box in boundingBoxes)
+                if (chkShowBackground.Checked)
                 {
-                    CvInvoke.Rectangle(result, box, new MCvScalar(0, 0, 255), 1); // Draw red rectangles
+                    foreach (Rectangle box in boundingBoxes)
+                    {
+                        CvInvoke.Rectangle(foreground, box, new MCvScalar(255, 255, 255), 1); // Draw white rectangles
+
+                    }
+
+                    pictureBox1.Image = foreground.ToBitmap();
+
+                }
+                else
+                {
+                    foreach (Rectangle box in boundingBoxes)
+                    {
+                        CvInvoke.Rectangle(frame, box, new MCvScalar(0, 0, 255), 1); // Draw red rectangles
+                    }
+
+                    pictureBox1.Image = frame.ToBitmap();
                 }
 
-                pictureBox1.Image = result.ToBitmap();
+
             }
         }
 

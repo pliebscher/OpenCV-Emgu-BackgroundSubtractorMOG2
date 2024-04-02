@@ -48,6 +48,7 @@
             label7 = new Label();
             txtContoursSize = new TextBox();
             chkDetectShadows = new CheckBox();
+            chkShowBackground = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -75,9 +76,10 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.BackColor = SystemColors.ActiveBorder;
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Location = new Point(200, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(681, 500);
+            pictureBox1.Size = new Size(689, 500);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
@@ -222,11 +224,22 @@
             chkDetectShadows.Text = "Detect Shadows";
             chkDetectShadows.UseVisualStyleBackColor = true;
             // 
+            // chkShowBackground
+            // 
+            chkShowBackground.AutoSize = true;
+            chkShowBackground.Location = new Point(19, 493);
+            chkShowBackground.Name = "chkShowBackground";
+            chkShowBackground.Size = new Size(122, 19);
+            chkShowBackground.TabIndex = 18;
+            chkShowBackground.Text = "Show Background";
+            chkShowBackground.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(893, 524);
+            Controls.Add(chkShowBackground);
             Controls.Add(chkDetectShadows);
             Controls.Add(txtContoursSize);
             Controls.Add(label7);
@@ -275,5 +288,6 @@
         private Label label7;
         private TextBox txtContoursSize;
         private CheckBox chkDetectShadows;
+        private CheckBox chkShowBackground;
     }
 }
